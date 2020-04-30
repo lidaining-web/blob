@@ -24,7 +24,7 @@ function App() {
           <div className="Conent-main">
             <Row justify="center" align="top">
               <Col span={12}>
-                {count ? <Route exact path="/" component={Articles} /> : <div className="noData">暂无文章</div>}
+                {count ? <Route exact path="/" component={Articles} /> : <div className="noData">敬请期待</div>}
               </Col>
               <Col span={4} offset={1}>
                 <Route exact path="/" component={Center} />
