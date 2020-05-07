@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.1.0",
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
@@ -49,6 +50,9 @@
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
+    "rc-queue-anim": "^1.8.4",
+    "rc-texty": "^0.2.0",
+    "rc-tween-one": "^2.6.8",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-app-rewired": "^2.1.5",

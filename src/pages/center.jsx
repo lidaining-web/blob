@@ -1,9 +1,56 @@
 import React from 'react';
+import { Row, Card, Tooltip } from 'antd';
+import { GithubOutlined, WechatOutlined } from '@ant-design/icons';
+// import { Link } from 'react-router-dom';
+import 'pages/center.scss';
+const { Meta } = Card;
 function Center(props) {
+  console.log(props)
+  const { sysTime } = 0;
+  const { issues } = 0;
   return (
-    <div className="Center-main">
-      个人中心
-    </div>
+    <Row>
+      <Card bordered={false} hoverable={true} className="card" cover={<img alt="bg" src={require('assets/headbg.jpg')} />}>
+        <div className="authorImg">
+          <img src={require('assets/head.jpg')} alt="github" />
+        </div>
+        <Meta
+          title={
+            <div>
+              <span className="card-title">lidaining-web</span>
+            </div>
+          }
+          description={
+            <div>
+              <p className="abstract">千万别成为大多数人</p>
+              <p className="abstract">
+                <span>文章 - {issues}</span>
+              </p>
+              <p className="abstract">博客已上线：{sysTime}</p>
+            </div>
+          }
+        />
+      </Card>
+      <Card title="FOLLOW ME" bordered={false} hoverable={true} className="card">
+        <div className="icon-git-wrp">
+          <Tooltip title="github">
+            <GithubOutlined style={{ fontSize: 30 }} onClick={() => window.open('https://github.com/lidaining-web')} />
+          </Tooltip>
+          <Tooltip
+            title={
+              <img
+                className="wx"
+                src={require('assets/wx.jpg')}
+                alt="微信"
+                width={100}
+                height={100}
+              />
+            }>
+            <WechatOutlined style={{ fontSize: 30 }} />
+          </Tooltip>
+        </div>
+      </Card>
+    </Row>
   );
 }
 
