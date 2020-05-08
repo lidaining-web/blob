@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import 'App.scss';
-import { Layout } from 'antd';
-import { Row, Col } from 'antd';
+import { Layout, Row, Col } from 'antd';
 import { Route } from 'react-router-dom';
 import Articles from 'components/article/article';
-import Head from 'components/Header';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Center from 'pages/center';
 import QueueAnim from 'rc-queue-anim';
-
+import './app.scss';
 
 function App() {
-  const { Header, Footer, Content } = Layout;
+  const { Content } = Layout;
   const [count] = useState(0);
   const bgGround = { 'background': `url(${require("assets/bg1.jpg")}) no-repeat`, 'backgroundSize': '100% 100%' }
   useEffect(() => {
@@ -18,15 +17,13 @@ function App() {
   });
   return (
     <div className="App" style={bgGround}>
-      <Layout>
-        <Header>
-          <Head />
-        </Header>
+      <Layout style={{ 'minHeight': '100vh', 'background': 'none' }}>
+        <Header />
         <Content>
-          <div className="Conent-main">
+          <div className="Conent-main" style={{ 'padding': '20px 0' }}>
             <Row justify="center" align="top">
               <Col span={12}>
-                {count ? <Route exact path="/" component={Articles} /> : <div className="noData">敬请期待</div>}
+                {count ? <Route exact path="/" component={Articles} /> : <div className="noData" style={{ 'textAlign': 'center' }}>敬请期待</div>}
               </Col>
               <Col span={4} offset={1}>
                 <QueueAnim>
@@ -36,11 +33,7 @@ function App() {
             </Row>
           </div>
         </Content>
-        <Footer>
-          <div className="Footer-content">
-            Created ©2020 李代宁 浙ICP备20010308号
-          </div>
-        </Footer>
+        <Footer />
       </Layout>
     </div>
   );
