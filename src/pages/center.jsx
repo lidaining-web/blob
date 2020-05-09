@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Row, Card, Tooltip } from 'antd';
 import { GithubOutlined, WechatOutlined } from '@ant-design/icons';
+import { TimesFun } from 'utils';
 // import { Link } from 'react-router-dom';
 import 'pages/center.scss';
 const { Meta } = Card;
-function Center(props) {
-  console.log(props)
-  const { sysTime } = 0;
-  const { issues } = 0;
+function Center() {
+  const [sysTime, setTime] = useState(TimesFun('2020-05-04 00:00:00'));
+  setInterval(() => { setTime(TimesFun('2020-05-04 00:00:00')) }, 1000)
+  const issues = 0;
   return (
     <Row>
       <Card bordered={false} hoverable={true} className="card" cover={<img alt="bg" src={require('assets/headbg.jpg')} />}>

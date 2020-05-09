@@ -6,7 +6,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Center from 'pages/center';
 import QueueAnim from 'rc-queue-anim';
-import './app.scss';
+import 'App.scss';
 
 function App() {
   const { Content } = Layout;
