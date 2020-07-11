@@ -23,7 +23,7 @@ function App() {
           <div className="Conent-main" style={{ 'padding': '20px 0' }}>
             <Row justify="center" align="top">
               <Col span={12}>
-                {count ? <Route exact path="/" component={Articles} /> : <div className="noData" style={{ 'textAlign': 'center' }}>敬请期待</div>}
+                {count ? <Route exact path="/" component={Articles} /> : <div className="noData" style={{ 'textAlign': 'center', 'color': 'white' }}>敬请期待</div>}
               </Col>
               <Col span={4} offset={1}>
                 <QueueAnim>
