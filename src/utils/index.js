@@ -1,3 +1,5 @@
+
+
 // 时间转换方法
 export function TimeUpdate(time) {
   if (!time) return '';
@@ -44,4 +46,10 @@ export function TimesFun(timesData) {
   timesString = dayDiff + '天' + hours + '小时' + minutes + '分钟' + seconds + '秒';
 
   return timesString
+}
+
+// 获取操作系统信息 
+export function getOsInfo() {
+  const userAgent = navigator.userAgent.toLowerCase()
+  return { userAgent };
 }
