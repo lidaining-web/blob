@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Texty from 'rc-texty';
 import TweenOne from 'rc-tween-one';
 import { Row, Col } from 'antd';
@@ -69,7 +70,8 @@ function act() {
                 />
               </div>
             </div>
-            <Texty
+            <Link to="/" style={{ 'color': 'white' }}>
+              <Texty
               className="title"
               type="mask-top"
               delay={400}
@@ -98,6 +100,7 @@ function act() {
             >
               李代宁的个人博客
       </Texty>
+            </Link>
             <TweenOne
               className="combined-bar"
               animation={{ delay: 2000, width: 0, x: 158, type: 'from', ease: 'easeInOutExpo' }}

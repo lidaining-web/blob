@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Layout, Row, Col } from 'antd';
 import { Route } from 'react-router-dom';
+import Detail from 'components/article/detail';
 import Articles from 'components/article/article';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -10,7 +11,6 @@ import 'App.scss';
 
 function App() {
   const { Content } = Layout;
-  const [count] = useState(0);
   const bgGround = { 'background': `url(${require("assets/bg1.jpg")}) no-repeat`, 'backgroundSize': '100% 100%' }
   useEffect(() => {
 
@@ -23,11 +23,13 @@ function App() {
           <div className="Conent-main" style={{ 'padding': '20px 0' }}>
             <Row justify="center" align="top">
               <Col span={12}>
-                {count ? <Route exact path="/" component={Articles} /> : <div className="noData" style={{ 'textAlign': 'center', 'color': 'white' }}>敬请期待</div>}
+                <Route exact path="/" component={Articles}/>
+                <Route exact path="/detail/:_id" component={Detail} />
               </Col>
               <Col span={4} offset={1}>
                 <QueueAnim>
-                  <Route key="1" exact path="/" component={Center} />
+                  {/* <Route key="1" exact path="/" component={Center} /> */}
+                  <Center count="1"/>
                 </QueueAnim>
               </Col>
             </Row>

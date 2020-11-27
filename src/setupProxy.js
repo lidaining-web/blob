@@ -1,8 +1,9 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
-  app.use(createProxyMiddleware('/api/list', {
-    target: 'http://127.0.0.1:7001/',
+  app.use(createProxyMiddleware('/api/', {
+    // target: 'http://www.lidaining.com:7001',
+    target: 'http://localhost:7001',
     secure: false,
     changeOrigin: true,
     pathRewrite: {

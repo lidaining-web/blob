@@ -7,6 +7,7 @@ const axios = Axios.create({
 })
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.MD5 = 'MD5'
 // axios.defaults.transformRequest = function (data, headers) { 
 //   return qs.stringify(data)
 // }
@@ -15,7 +16,6 @@ axios.interceptors.request.use((config) => {
   if (config.method === 'post') {
     config.data = JSON.parse(JSON.stringify(config.data))
   }
-  console.log(config)
   return config;
 });
 // Add a response interceptor

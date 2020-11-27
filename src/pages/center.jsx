@@ -2,22 +2,21 @@ import React, { useState } from 'react';
 import { Row, Card, Tooltip } from 'antd';
 import { GithubOutlined, WechatOutlined } from '@ant-design/icons';
 import { TimesFun, getOsInfo } from 'utils';
-import axios from 'utils/axios'
+// import { sendSysInfo } from 'api/index'
 // import { Link } from 'react-router-dom';
 import 'pages/center.scss';
-axios.get('/cityjson').then(res => {
-  // console.log(JSON.parse(res.match("\\{(.+?)\\}")[0]))
-}).catch(err => { console.log(err) })
-axios.post('/list', {
-  userAgent: getOsInfo().userAgent
-}).then(res => {
-  console.log(res)
-}).catch(err => { console.log(err) })
+// axios.get('/cityjson').then(res => {
+//   console.log(JSON.parse(res.match("\\{(.+?)\\}")[0]))
+// }).catch(err => { console.log(err) })
+// sendSysInfo({ userAgent: getOsInfo().userAgent }).then(res => {
+  
+// }).catch(err => { console.log(err) })
+getOsInfo()
 const { Meta } = Card;
-function Center() {
-  const [sysTime, setTime] = useState(TimesFun('2020-05-04 00:00:00'));
-  setInterval(() => { setTime(TimesFun('2020-05-04 00:00:00')) }, 1000)
-  const issues = 0;
+function Center(props) {
+  const [sysTime, setTime] = useState(TimesFun('2020-11-27 00:00:00'));
+  setInterval(() => { setTime(TimesFun('2020-11-27 00:00:00')) }, 1000)
+  const issues = localStorage.getItem('count') || 0;
 
   return (
     <Row>
