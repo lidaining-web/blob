@@ -1,0 +1,17 @@
+.center-content{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 20px;
+  h1{
+    display: none;
+  }
+}
+.toDetail{
+  margin-left: 20px;
+}
+.acticleListItem:not(:first){
+  margin-top: 30px;
+}
